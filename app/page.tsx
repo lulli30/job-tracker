@@ -1,69 +1,239 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+    <div className="page">
+      <nav>
+        <div className="wordmark">
+          <span className="dot" />
+          Ledger
+        </div>
+        <a href="/applications" className="nav-cta">
+          Open the tracker →
+        </a>
+      </nav>
+
+      <div className="wrap">
+        <header className="hero">
+          <p className="eyebrow">Job application tracker</p>
+          <h1 className="hero-title">
+            Every application,
+            <br />
+            from <em>sent</em> to <em>signed</em>.
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="hero-sub">
+            Keep every role you&apos;ve applied to in one place. Log the
+            company, the position, and where things stand — and always know
+            what to follow up on next.
           </p>
+          <div className="hero-actions">
+            <a href="/applications/new" className="btn-primary">
+              Add your first application →
+            </a>
+            <a href="#how-it-works" className="btn-secondary">
+              See how it works
+            </a>
+          </div>
+
+          <div className="trail" aria-hidden="true">
+            <div className="stamp stamp-applied">
+              <div className="stamp-badge">Applied</div>
+            </div>
+            <div className="stamp-connector" />
+            <div className="stamp stamp-interview">
+              <div className="stamp-badge">Interview</div>
+            </div>
+            <div className="stamp-connector" />
+            <div className="stamp stamp-offer">
+              <div className="stamp-badge">Offer</div>
+            </div>
+            <div className="stamp-connector" />
+            <div className="stamp stamp-accepted">
+              <div className="stamp-badge">Accepted</div>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      <section id="how-it-works">
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <p className="section-tag">Add an application</p>
+              <h2 className="section-title">
+                Type it once. Watch it take shape.
+              </h2>
+            </div>
+            <p className="section-note">
+              Add the company, the role, and where you stand — your card
+              builds itself as you type, so you can see exactly what
+              you&apos;re about to save.
+            </p>
+          </div>
+
+          <div className="form-preview-grid">
+            <div className="paper-card">
+              <p className="card-label">New application</p>
+              <div className="fake-field">
+                <label>Company</label>
+                <div className="fake-input typing-text">
+                  Northwind Robotics
+                </div>
+              </div>
+              <div className="fake-field">
+                <label>Position</label>
+                <div className="fake-input">Frontend Engineer</div>
+              </div>
+              <div className="fake-field">
+                <label>Status</label>
+                <div className="fake-input">Interview</div>
+              </div>
+            </div>
+
+            <div className="paper-card preview-card">
+              <p className="card-label">Your card</p>
+              <div className="preview-company">Northwind Robotics</div>
+              <div className="preview-position">Frontend Engineer</div>
+              <div className="preview-status">Interview</div>
+              <div className="sync-note">
+                <span className="pulse-dot" />
+                this is what shows up on your dashboard
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section>
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <p className="section-tag">Your dashboard</p>
+              <h2 className="section-title">
+                Everything you&apos;ve applied to, right where you left it.
+              </h2>
+            </div>
+            <p className="section-note">
+              Nothing to save manually and nothing to dig for — your latest
+              applications are always waiting at the top.
+            </p>
+          </div>
+
+          <div className="flow-grid">
+            <div className="flow-card">
+              <span className="flow-verb verb-post">Saved instantly</span>
+              <p className="flow-title">Add it once, keep it forever</p>
+              <p className="flow-desc">
+                The moment you save an application, it&apos;s part of your
+                tracker for good — no extra steps, nothing to remember to
+                back up.
+              </p>
+            </div>
+
+            <div className="flow-card">
+              <span className="flow-verb verb-get">Newest first</span>
+              <p className="flow-title">Pick up right where you left off</p>
+              <p className="flow-desc">
+                Open your dashboard and your most recent applications are
+                already at the top, so you can jump straight back into the
+                search.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      <section>
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <p className="section-tag">Track your progress</p>
+              <h2 className="section-title">
+                Move an application forward in one tap.
+              </h2>
+            </div>
+            <p className="section-note">
+              Got an interview? Heard back? Update the status and everything
+              else about that application — the company, the role, the notes
+              — stays exactly as you left it.
+            </p>
+          </div>
+
+          <div className="pipeline-block">
+            <div className="pipeline-row">
+              <span className="pipe-chip applied">Applied</span>
+              <span className="pipe-arrow">→</span>
+              <span className="pipe-chip interview">Interview</span>
+              <span className="pipe-arrow">→</span>
+              <span className="pipe-chip offer">Offer</span>
+              <span className="pipe-arrow">→</span>
+              <span className="pipe-chip accepted">Accepted</span>
+            </div>
+            <p className="pipeline-caption">
+              Every application moves through these four stages, so a glance
+              at your dashboard tells you exactly where things stand across
+              your whole search.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="wrap">
+          <div className="section-head">
+            <div>
+              <p className="section-tag">Stay in control</p>
+              <h2 className="section-title">
+                Tidy, accurate, and never lost.
+              </h2>
+            </div>
+            <p className="section-note">
+              A tracker only helps if you can trust what&apos;s in it.
+            </p>
+          </div>
+
+          <div className="reliability-grid">
+            <div className="rel-card">
+              <div className="rel-icon icon-delete">✕</div>
+              <p className="rel-title">Clean up anytime</p>
+              <p className="rel-desc">
+                Applied somewhere by mistake, or just want a fresh start?
+                Remove any application in a single tap.
+              </p>
+            </div>
+
+            <div className="rel-card">
+              <div className="rel-icon icon-400">!</div>
+              <p className="rel-title">Catches mistakes early</p>
+              <p className="rel-desc">
+                Forget to fill in the company or role? We&apos;ll let you
+                know before it gets saved, so your list stays accurate.
+              </p>
+            </div>
+
+            <div className="rel-card">
+              <div className="rel-icon icon-500">✓</div>
+              <p className="rel-title">Built to be reliable</p>
+              <p className="rel-desc">
+                If something ever goes wrong on our end, you&apos;ll get a
+                clear heads-up instead of a silent failure or lost data.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div className="wrap">
+          <div className="footer-row">
+            <div className="wordmark small">
+              <span className="dot" />
+              Ledger
+            </div>
+            <p className="footer-copy">
+              Ledger — a small, honest place to keep track of the job hunt.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
